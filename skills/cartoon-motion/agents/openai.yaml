@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cartoon Motion"
+  short_description: "Prepare expressive 2D characters for screen animation"
+  default_prompt: "Use $cartoon-motion to turn this character into expressive assets and tested screen motion at the level this project needs."
