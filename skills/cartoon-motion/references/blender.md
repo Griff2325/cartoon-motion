@@ -30,6 +30,8 @@ If two targeted geometry revisions retain the same defining form failure, reject
 
 Check color under a consistent neutral lighting/view setup before changing materials to compensate for highlights or shadows. Review the final lighting separately. Check costume and prop intersections in the rendered study as well as in motion.
 
+For surface fitting, verify API coordinate spaces: [`Object.ray_cast` and `closest_point_on_mesh`](https://docs.blender.org/api/current/bpy.types.Object.html#bpy.types.Object.ray_cast) query evaluated geometry in object space. Convert world origins as points and ray directions as vectors with the inverse of the evaluated object’s `matrix_world`, then convert a successful hit location back with its forward `matrix_world`; handle normals and finite distance limits in their appropriate spaces, especially under nonuniform scale. Under nonuniform scale, `closest_point_on_mesh` minimizes object-space distance, so converting its result does not guarantee the closest world-space point; use world-space geometry when true world proximity is required. [`Scene.ray_cast`](https://docs.blender.org/api/current/bpy.types.Scene.html#bpy.types.Scene.ray_cast) uses world space, so do not apply the same conversion blindly. After moving or scaling the target, inspect surface contact in profile instead of trusting a front-view overlay.
+
 Polygon count is not a quality proxy. More triangles do not repair silhouette, bad joint flow, weights or acting. Budget geometry, textures and rendered detail for the chosen delivery path and measured target costs; do not invent a universal triangle limit. A pre-rendered sprite and an interactive 3D export have different runtime costs.
 
 ## Build only the rig the performance needs
