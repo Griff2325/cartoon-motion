@@ -1,6 +1,6 @@
 # Cartoon Motion
 
-A reusable agent skill for turning 2D cartoon characters into expressive screen assets and working animation. It works with Codex and Claude Code, using the art tools and runtime available in your project.
+A reusable agent skill for turning cartoon characters into expressive screen assets and working animation, using 2D artwork or stylized 3D in Blender. It works with Codex and Claude Code, using the art tools and runtime available in your project.
 
 Start from a character reference, refine useful poses and expressions, prepare genuine separate parts when needed, and choose a practical path to tested animation. The skill distinguishes a pose sheet, separable artwork, a working rig and animation verified in an app, so the handoff says what is actually ready.
 
@@ -43,12 +43,22 @@ Give the agent the reference, target screen size/platform, required actions, and
 
 > Use cartoon-motion to integrate these approved layered assets into the app's existing state machine. Test repeated and interrupted reactions, return to rest, clipping and reduced motion. Report which checks ran in the app.
 
+For Blender authoring, the skill discovers the actual available MCP tools, preserves existing scenes, and guides construction, deformation, acting and complete playback review before export or app integration. A saved rig and a convincing performance are checked separately. It can also use an authorized CLI/UI fallback; it does not provide or configure a Blender MCP server.
+
+After restarting with your Blender MCP connection enabled, use:
+
+- **Codex:** `$cartoon-motion Use the connected Blender tools to build, rig and animate a character from these approved references. Preserve existing work, save an editable versioned .blend, and show complete playback at phone and hero size before app integration. Use only source assets and providers I authorize.`
+- **Claude Code:** `/cartoon-motion Use the connected Blender tools to build, rig and animate a character from these approved references. Preserve existing work, save an editable versioned .blend, and show complete playback at phone and hero size before app integration. Use only source assets and providers I authorize.`
+
+Provide the reference files, desired emotion/action and target sizes with that prompt. If the Blender tools are not exposed to the agent, it should report that limit rather than claim a connection.
+
 The skill does not include an image generator, art editor, rigging application or runtime. It uses tools actually available to the agent; Claude Code is not assumed to have Codex's image-generation tools. Art generation, paid services, editor licenses and runtime dependencies are selected for the task, not installed by this repository.
 
 ## Contents
 
 - [`SKILL.md`](skills/cartoon-motion/SKILL.md): the workflow and acceptance checks.
 - [`rig-and-runtime.md`](skills/cartoon-motion/references/rig-and-runtime.md): conditional guidance for parts, authoring tools and runtime integration.
+- [`blender.md`](skills/cartoon-motion/references/blender.md): conditional Blender construction, rigging, acting, preview and export workflow.
 - [`agents/openai.yaml`](skills/cartoon-motion/agents/openai.yaml): optional Codex display metadata; the core instructions remain portable.
 
 No sample character art or third-party artwork is bundled. The [MIT license](LICENSE) covers this repository's instructions and metadata; separately supplied or generated assets have their own provenance and terms.

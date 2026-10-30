@@ -1,6 +1,6 @@
 ---
 name: cartoon-motion
-description: Create, refine, prepare, and animate 2D cartoon characters for screens, from reference art and expressive poses to separate parts, rig handoff, and tested runtime motion. Use for illustrated characters in apps, websites, games, explainers, and interfaces; not 3D character production or unrelated UI animation.
+description: Create, refine, rig, and animate cartoon characters for screens, using 2D artwork or stylized 3D in Blender, from expressive poses and separate parts to tested runtime motion. Use for characters in apps, websites, games, explainers, and interfaces; not unrelated UI animation.
 ---
 
 # Cartoon Motion
@@ -29,7 +29,7 @@ Ask only for missing choices that would materially change the output; use reason
 
 These can be combined: a simple arm rig may switch hand drawings; a large turn may need another pose rather than deforming one drawing. Do not select a complex rig for motion a pose swap handles well. A runtime library loads animation; installing one does not create a rig.
 
-Read [references/rig-and-runtime.md](references/rig-and-runtime.md) when choosing an authoring pipeline, preparing parts, or integrating motion.
+Read [references/rig-and-runtime.md](references/rig-and-runtime.md) when choosing an authoring pipeline, preparing parts, or integrating motion. For Blender authoring through available MCP, CLI or UI tools, read [references/blender.md](references/blender.md): it covers 2D mesh/cutout, Grease Pencil and stylized 3D construction, deformation, acting and export. Use its geometry/rig workflow for Blender rather than applying raster-part procedures to a 3D model.
 
 ## Use the available art pipeline honestly
 
