@@ -29,7 +29,7 @@ Ask only for missing choices that would materially change the output; use reason
 
 These can be combined: a simple arm rig may switch hand drawings; a large turn may need another pose rather than deforming one drawing. Do not select a complex rig for motion a pose swap handles well. A runtime library loads animation; installing one does not create a rig.
 
-Read [references/rig-and-runtime.md](references/rig-and-runtime.md) when choosing an authoring pipeline, preparing parts, or integrating motion. For Blender authoring through available MCP, CLI or UI tools, read [references/blender.md](references/blender.md): it covers 2D mesh/cutout, Grease Pencil and stylized 3D construction, deformation, acting and export. Use its geometry/rig workflow for Blender rather than applying raster-part procedures to a 3D model.
+Read [references/rig-and-runtime.md](references/rig-and-runtime.md) when choosing an authoring pipeline, preparing parts, or integrating motion. For Blender authoring through available MCP, CLI or UI tools, read [references/blender.md](references/blender.md): it covers 2D mesh/cutout, Grease Pencil and stylized 3D construction, deformation, acting and export. Use its geometry/rig workflow for Blender rather than applying raster-part procedures to a 3D model. When the character must be drawn as code (SVG, canvas or a web view), or no image or rigging tool is available, read [references/code-drawn-svg.md](references/code-drawn-svg.md). It covers design exploration, construction rules, a finish recipe that avoids the clip-art look, a data-driven rig, and a frame-exact timeline with contact-sheet review and synthesized sound.
 
 ## Use the available art pipeline honestly
 
@@ -40,6 +40,10 @@ Image generation is useful for transparent raster concepts and expressive drawin
 Work from the approved reference or latest accepted candidate. Preserve head/body ratio, silhouette, facial landmarks, costume details, and line weight. A collection of different poses is coverage, not repeated refinement of one candidate. Track genuine revision passes by the defect addressed and before/after result; do not inflate the count through exports, crops, or duplicates.
 
 Choose a bounded iteration budget from the user's request. At each pass, inspect the result, identify the most consequential defect, make a targeted correction, and compare again. If the tool repeatedly redraws identity or anatomy instead of fixing the defect, switch to a more controlled available method or report the specific limit. Do not generate endlessly to satisfy an arbitrary pass count.
+
+## Design before you animate
+
+When the character itself is new or rejected, settle the design before building motion. Turn the personality into measurable shape language, then show a few genuinely different directions (hero pose, expressions, silhouette at app size) and let the user pick. If the user rejects a round, ask which existing characters feel right and borrow named traits rather than guessing again. Don't default to cute proportions, and don't add props or costume pieces the character doesn't need. Polish only the chosen direction. Then prove it with one short animated moment before building a model sheet or integrating.
 
 ## Make expressions and poses useful
 
