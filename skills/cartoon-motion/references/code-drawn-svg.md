@@ -1,23 +1,23 @@
 # Code-drawn characters and frame-exact animation
 
-Read this when no image generator or rigging editor is available, when the character must be drawn as code (SVG, canvas, a web view), or when you need a frame-exact animated moment with sound for review. It records a workflow that produced an approved result after several rejected rounds. Most of the lessons are about what made the earlier rounds fail.
+Read this when no image generator or rigging editor is available, when the character must be drawn as code (SVG, canvas, a web view), or when you need a frame-exact animated moment with sound for review. Most of the guidance is about avoiding the ways code-drawn characters usually fail review.
 
 ## Why code-drawn characters usually look bad
 
-Code invites shapes that are easy to compute: ellipses, circles, single-width strokes and symmetric everything. The result reads as an icon or "vibe-coded" clip art, not a character. Specific failures seen in review:
+Code invites shapes that are easy to compute: ellipses, circles, single-width strokes and symmetric everything. The result reads as an icon or "vibe-coded" clip art, not a character. Common failures:
 
 - Stick limbs of one stroke width, ball hands and no joints. There's nothing to pose.
 - Everything outlined in the same weight of pure black, so it reads as a napkin sketch.
 - Flat fills with no light, or a single gradient.
 - Cute-by-default proportions: big round eyes, blush, stubby limbs. Don't add these unless the brief asks for them.
 - Construction errors that are obvious at a glance: a limb starting at the edge of the body next to the mouth, legs that don't meet the body, gloves with the thumb on the wrong side.
-- Props and costume added to fake "complete". A monocle, cane or band-aid with no reason in the character only adds noise. Remove anything the user didn't ask for if it doesn't serve the personality.
+- Props and costume added to fake "complete". An accessory with no reason in the character only adds noise. Remove anything the user didn't ask for if it doesn't serve the personality.
 
 ## Design before motion
 
 1. **Brief with numbers.** Put the personality into measurable shape language: height ratio between characters, where the widest point falls, eye size ratio, line of action, limb taper, palette hex values. Every adjective should become a number.
 2. **Explore wide, then deep.** Show the user 2–4 genuinely different directions on one sheet, each with a hero pose, 4–6 expressions and a silhouette test at app size. Directions should differ in shape language and references, not only in render style.
-3. **Ask for references.** If the user rejects a round, ask which existing characters feel right and pull concrete traits from them. For example, classic ad mascots give you thin black limbs, white gloves and a dapper attitude, and Chuck Jones gives you lanky lines, heavy lids and deadpan looks. Name the traits you're borrowing. Don't copy a protected character.
+3. **Ask for references.** If the user rejects a round, ask which existing characters or art styles feel right and pull concrete, nameable traits from them (line weight, limb construction, eye shape, acting style). Users often name a reference for its art style rather than its props, so confirm before copying accessories. Name the traits you're borrowing. Don't copy a protected character.
 4. **Polish only the pick.** Once a direction is chosen, spend the effort on finish (below) rather than on more options.
 5. **Prove it in motion early.** Animate one short moment with the chosen design before building a model sheet or integrating. Seeing it move is what gets the user's approval.
 
@@ -78,4 +78,4 @@ Keyframes list only what changes: `[frame, partialPose, easeIntoThisKey]`. Resol
 
 ## Handoff
 
-Commit the drawing engine, the choreography, the build script and the render scripts, and keep generated pages and frames out of git. Write down the exact commands to rebuild, render stills, render all frames, make the score and encode. Record which direction the user approved, and every rejection along with its reason, so the next agent doesn't repeat it.
+Commit the drawing engine, the choreography, the build script and the render scripts to the project, and keep generated pages and frames out of git. Write the project's state into a handoff file in the project repository (see "Keep project state in the project" in `SKILL.md`): the exact commands to rebuild, render stills, render all frames, make the score and encode; which direction the user approved; and every rejection with its reason, so the next agent doesn't repeat it.

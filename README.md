@@ -60,6 +60,11 @@ The skill does not include an image generator, art editor, rigging application o
 - [`rig-and-runtime.md`](skills/cartoon-motion/references/rig-and-runtime.md): conditional guidance for parts, authoring tools and runtime integration.
 - [`blender.md`](skills/cartoon-motion/references/blender.md): conditional Blender construction, rigging, acting, preview and export workflow.
 - [`code-drawn-svg.md`](skills/cartoon-motion/references/code-drawn-svg.md): characters drawn as code (SVG/canvas), a finish recipe, a data-driven rig and frame-exact animation with contact sheets and synthesized sound.
+- [`learnings.md`](skills/cartoon-motion/references/learnings.md): general lessons from past character work. Agents read it at the start of a task and add to it at the end.
 - [`agents/openai.yaml`](skills/cartoon-motion/agents/openai.yaml): optional Codex display metadata; the core instructions remain portable.
+
+## Learnings and project state
+
+The skill gets better as it's used. At the end of a task, agents add any general lesson to `references/learnings.md` (and, with access to this repository, open a pull request for it). Project-specific state, such as which design a user approved, file paths and commands, stays in that project's own repository in a handoff file linked from its `AGENTS.md` or `CLAUDE.md`. Nothing project-specific belongs in this repository.
 
 No sample character art or third-party artwork is bundled. The [MIT license](LICENSE) covers this repository's instructions and metadata; separately supplied or generated assets have their own provenance and terms.

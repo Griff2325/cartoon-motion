@@ -7,6 +7,36 @@ description: Create, refine, rig, and animate cartoon characters for screens, us
 
 Turn a character into expressive screen assets or working animation at the level the task needs. Preserve its visual identity. A good pose sheet, a layered character, and an integrated animation are different deliverables: name which one you actually produced.
 
+## How to use this skill
+
+1. **Start.** Read [references/learnings.md](references/learnings.md). If the project has an animation handoff file (for example `docs/**/ANIMATION_HANDOFF.md`, or one linked from `AGENTS.md` or `CLAUDE.md`), read it and continue from its stated next steps instead of starting over.
+2. **Scope.** Set the finish line (below) and pick the simplest useful motion.
+3. **Read only the reference you need.** [rig-and-runtime.md](references/rig-and-runtime.md) for parts and runtimes, [blender.md](references/blender.md) for Blender, [code-drawn-svg.md](references/code-drawn-svg.md) for characters drawn as code.
+4. **Work in reviewed passes.** Render, look, fix the most consequential defect, repeat. Show the user evidence (contact sheets, a short video) rather than descriptions.
+5. **Finish.** Write or update the project's handoff file, then record any general lesson (see "Record what you learned").
+
+## Other skills and tools this works with
+
+This skill is the workflow. It doesn't bundle tools; discover what the session actually has and use it:
+
+- **Image generation or editing** (for example Codex's image-generation skill) for raster concepts and pose sprites. Claude Code usually has none; fall back to code-drawn art or supplied assets.
+- **Blender** through an MCP server, CLI or UI for 2D cutout, Grease Pencil or stylized 3D. See `references/blender.md`.
+- **A headless browser** (Playwright or the agent's browser tool) to render stills, contact sheets and every frame of code-drawn work.
+- **FFmpeg** to encode frames and sound, and to measure loudness.
+- **Code-to-video tools** such as Remotion, GSAP, Three.js or HyperFrames, and any skills they ship, when the project already uses them or the deliverable is a video.
+- **The project's design or UI skill**, if it has one, for anything around the character (layouts, type, colour). This skill covers the character and its motion only.
+- **Rigging runtimes** (Rive, Spine, Lottie) only when the deliverable needs them. See `references/rig-and-runtime.md`.
+
+If a tool the task needs isn't available, say so and offer the closest honest alternative.
+
+## Keep project state in the project
+
+Anything specific to one project stays in that project's repository: approved designs, rejected directions and why, file paths, build and render commands, and next steps. Write it to a handoff file there (for example `docs/<area>/ANIMATION_HANDOFF.md`) and point to it from the project's `AGENTS.md` or `CLAUDE.md` so Codex and Claude Code both find it. Never put project names, characters, private references or user feedback into this skill; it is shared across projects and public.
+
+## Record what you learned
+
+At the end of a task, ask: did anything happen that would change how an agent approaches the *next* character, in any project? Examples: a kind of design users reliably rejected, a construction check that caught a repeated defect, a review step that saved a round, a tool that worked or failed. If so, add it to [references/learnings.md](references/learnings.md) in general terms, following the format there. If the lesson is really technique, improve the relevant reference file instead. Propose the change as a pull request to this skill's repository when you have access to it; otherwise tell the user the lesson so they can add it.
+
 ## Set the finish line
 
 Use the user's brief and existing project to establish:
