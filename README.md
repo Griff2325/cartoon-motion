@@ -59,6 +59,7 @@ The skill does not include an image generator, art editor, rigging application o
 - [`SKILL.md`](skills/cartoon-motion/SKILL.md): the workflow and acceptance checks.
 - [`rig-and-runtime.md`](skills/cartoon-motion/references/rig-and-runtime.md): conditional guidance for parts, authoring tools and runtime integration.
 - [`blender.md`](skills/cartoon-motion/references/blender.md): conditional Blender construction, rigging, acting, preview and export workflow.
+- [`code-drawn-svg.md`](skills/cartoon-motion/references/code-drawn-svg.md): characters drawn as code (SVG/canvas), a finish recipe, a data-driven rig and frame-exact animation with contact sheets and synthesized sound.
 - [`agents/openai.yaml`](skills/cartoon-motion/agents/openai.yaml): optional Codex display metadata; the core instructions remain portable.
 
 No sample character art or third-party artwork is bundled. The [MIT license](LICENSE) covers this repository's instructions and metadata; separately supplied or generated assets have their own provenance and terms.
